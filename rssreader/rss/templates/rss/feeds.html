@@ -1,0 +1,26 @@
+<div xmlns:v-bind="http://www.w3.org/1999/xhtml" xmlns:v-attr="http://www.w3.org/1999/xhtml">
+        {% verbatim %}
+
+        <div v-if="items.length" v-for="item in items">
+            <div v-for="image in item.media_thumbnail">
+                <img v-bind:src="image.url" height="=100px" width = "100px">
+            </div>
+
+
+
+
+
+                        {{ item.published }}<br>
+                        {{item.summary}}<br>
+                        <a v-bind:href="item.link">{{ item.title }}</a><br>
+                        {{ item.author }}<br>
+
+
+
+        </div>
+    <div v-if="!items.length">
+                <p>Enter your favorite RSS feed above.</p>
+        </div>
+
+        {% endverbatim %}
+</div>
